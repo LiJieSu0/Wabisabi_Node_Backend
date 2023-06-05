@@ -20,6 +20,10 @@ app.listen(port,()=>{
     console.log("Server is listening on port "+port);
 })
 
+app.get('/',(req,res)=>{
+    res.send("Server is listening");
+});
+
 app.use('/menu',menuRouter);
 app.use('/order',orderRouter);
 
