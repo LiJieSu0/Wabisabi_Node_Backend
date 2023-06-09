@@ -21,8 +21,8 @@ app.listen(port,()=>{
 })
 
 app.get('/',(req,res)=>{
-    res.send("Server is listening");
-});
+    res.send("server is listening");
+})
 
 app.use('/menu',menuRouter);
 app.use('/order',orderRouter);
