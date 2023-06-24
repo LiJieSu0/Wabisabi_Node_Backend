@@ -36,9 +36,15 @@ router.get('/time',async(req,res)=>{
     }
 });
 
-router.post('/submit',(req,res)=>{
-    console.log(req.body);
-    res.json({Message:req.body});
+router.post('/submit',async(req,res)=>{
+    try{
+        const newOrder=new Order(req.body);
+        await newOrder.save();
+        res.status(200).json({Order:newOrder});
+        console.log("order created");
+    }catch(e){
+        console.log(e);
+    }
 });
 
 module.exports=router;

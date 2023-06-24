@@ -7,8 +7,12 @@ const Order=new mongoose.Schema({
     order_time:Date,
     order_note:String,
     order_items:[{
-        menu_item:String,
-        amount:Number
+        item_name:String,
+        amount:Number,
+        ice_level:String,
+        sugar_level:String,
+        toppings:Array,
+        price:Number
         }],
     order_code:String,
     order_complete:Boolean,
